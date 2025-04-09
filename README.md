@@ -122,7 +122,7 @@ src/
 
 ````
 git clone https://github.com/shreyashkashyapanand01/Bookstore_Application.git
-cd bookstore-api
+cd Bookstore_Application
 
 ````
 2. Configure MongoDB:
