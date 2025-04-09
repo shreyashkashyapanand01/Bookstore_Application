@@ -121,7 +121,7 @@ src/
 1. Clone the project:
 
 ````
-git clone https://github.com/yourusername/bookstore-api.git
+git clone https://github.com/shreyashkashyapanand01/Bookstore_Application.git
 cd bookstore-api
 
 ````
