@@ -40,24 +40,25 @@ public class BookController {
     }
 
     @GetMapping("/search")
-    public List<Book> searchBooks(@RequestParam(required = false) String title,
-                                  @RequestParam(required = false) String author,
-                                  @RequestParam(required = false) String category,
-                                  @RequestParam(required = false) Double rating) {
-        if (title != null) {
-            return bookService.searchByTitle(title);
-        }
-        if (author != null) {
-            return bookService.searchByAuthor(author);
-        }
-        if (category != null) {
-            return bookService.searchByCategory(category);
-        }
-        if (rating != null) {
-            return bookService.searchByRating(rating);
-        }
-        return bookService.findAll();
+    public List<Book> searchBooks(@RequestParam String title) {
+        return bookService.searchByTitle(title);
     }
+
+    @GetMapping("/filter/author")
+    public List<Book> filterByAuthor(@RequestParam String author) {
+        return bookService.searchByAuthor(author);
+    }
+
+    @GetMapping("/filter/category")
+    public List<Book> filterByCategory(@RequestParam String category) {
+        return bookService.searchByCategory(category);
+    }
+
+    @GetMapping("/filter/rating")
+    public List<Book> filterByRating(@RequestParam double minRating) {
+        return bookService.searchByRating(minRating);
+    }
+
 
 
 }
